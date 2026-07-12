@@ -10,18 +10,32 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Simulate loading progress
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + Math.floor(Math.random() * 10) + 1;
-      });
-    }, 150);
+    let interval: NodeJS.Timeout;
 
-    return () => clearInterval(interval);
+    const completeLoading = () => {
+      // Slowly fill to 100% when document is ready
+      setProgress(100);
+      clearInterval(interval);
+    };
+
+    if (document.readyState === "complete") {
+      setTimeout(completeLoading, 1000);
+    } else {
+      window.addEventListener("load", completeLoading);
+      
+      // Fake progress up to 90% while waiting
+      interval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 90) return 90;
+          return prev + Math.floor(Math.random() * 5) + 1;
+        });
+      }, 200);
+    }
+
+    return () => {
+      window.removeEventListener("load", completeLoading);
+      clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {

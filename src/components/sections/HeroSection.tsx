@@ -7,14 +7,15 @@ import { Button } from "@/components/ui/Button";
 interface HeroProps {
   onIntroFinish: () => void;
   introFinished: boolean;
+  isReady: boolean;
 }
 
-export default function HeroSection({ onIntroFinish, introFinished }: HeroProps) {
+export default function HeroSection({ onIntroFinish, introFinished, isReady }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !isReady) return;
 
     // Explicitly attempt play to catch browser autoplay blocking
     const attemptPlay = async () => {
@@ -46,7 +47,7 @@ export default function HeroSection({ onIntroFinish, introFinished }: HeroProps)
       video.removeEventListener("timeupdate", handleTimeUpdate);
       clearTimeout(failsafe);
     };
-  }, [introFinished, onIntroFinish]);
+  }, [introFinished, onIntroFinish, isReady]);
 
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">

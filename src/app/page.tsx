@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import Preloader from "@/components/layout/Preloader";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -28,6 +29,7 @@ if (typeof window !== "undefined") {
 }
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [introFinished, setIntroFinished] = useState(false);
 
   useEffect(() => {
@@ -51,13 +53,14 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-[#050505]">
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
       
       <div className={cn("transition-opacity duration-1000", introFinished ? "opacity-100" : "opacity-0")}>
         <Navbar />
       </div>
 
-      <div className="relative z-0">
-        <HeroSection onIntroFinish={() => setIntroFinished(true)} introFinished={introFinished} />
+      <div className={cn("relative z-0 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
+        <HeroSection onIntroFinish={() => setIntroFinished(true)} introFinished={introFinished} isReady={!loading} />
         <AboutSection />
         <ManufacturingSection />
         <ResearchSection />
