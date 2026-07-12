@@ -36,16 +36,8 @@ export default function HeroSection({ onIntroFinish, introFinished, isReady }: H
 
     video.addEventListener("timeupdate", handleTimeUpdate);
 
-    // Bulletproof Failsafe: If video doesn't start playing within 3 seconds, unlock the site.
-    const failsafe = setTimeout(() => {
-      if (!introFinished && video.currentTime === 0) {
-        onIntroFinish();
-      }
-    }, 3000);
-
     return () => {
       video.removeEventListener("timeupdate", handleTimeUpdate);
-      clearTimeout(failsafe);
     };
   }, [introFinished, onIntroFinish, isReady]);
 
