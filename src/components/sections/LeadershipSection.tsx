@@ -18,17 +18,20 @@ export default function LeadershipSection() {
   const listRef = useRef<HTMLUListElement>(null);
 
   useGSAP(() => {
-    gsap.from(".founder-card", {
-      y: 50,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 80%",
-      },
-    });
+    gsap.fromTo(".founder-card", 
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+        },
+      }
+    );
   }, { scope: containerRef });
 
   return (
