@@ -30,7 +30,7 @@ export default function ResearchSection() {
         <div className="order-2 lg:order-1 relative h-[50vh] md:h-[70vh] rounded-3xl overflow-hidden shadow-2xl shadow-brand-medical/20">
           <img
             ref={imageRef}
-            src="/research.png"
+            src="/Pavanputra-Cinematic/research.png"
             alt="Pharmaceutical Research"
             className="w-full h-full object-cover origin-center scale-100"
           />

@@ -34,7 +34,7 @@ export default function InnovationSection() {
         <div className="relative w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl shadow-brand-medical/10">
           <img
             ref={imageRef}
-            src="/innovation.png"
+            src="/Pavanputra-Cinematic/innovation.png"
             alt="Pharmaceutical Innovation"
             className="w-full h-auto object-cover"
           />

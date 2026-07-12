@@ -53,7 +53,7 @@ export default function HeroSection({ onIntroFinish, introFinished }: HeroProps)
       <div className="absolute inset-0 z-0 bg-black">
         <video
           ref={videoRef}
-          src="/video1.mp4"
+          src="/Pavanputra-Cinematic/video1.mp4"
           autoPlay
           muted
           playsInline

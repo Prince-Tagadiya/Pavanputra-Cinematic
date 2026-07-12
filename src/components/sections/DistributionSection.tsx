@@ -31,7 +31,7 @@ export default function DistributionSection() {
         <div className="order-2 lg:order-1 relative h-[50vh] md:h-[60vh] rounded-3xl overflow-hidden shadow-2xl shadow-brand-medical/30">
           <img
             ref={imageRef}
-            src="/distribution.png"
+            src="/Pavanputra-Cinematic/distribution.png"
             alt="Global Distribution"
             className="w-full h-full object-cover"
           />

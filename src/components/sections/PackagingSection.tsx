@@ -32,7 +32,7 @@ export default function PackagingSection() {
       <div className="absolute inset-0 z-0">
         <img
           ref={imageRef}
-          src="/packaging.png"
+          src="/Pavanputra-Cinematic/packaging.png"
           alt="Automated Packaging"
           className="w-full h-full object-cover opacity-50"
         />

@@ -47,7 +47,7 @@ export default function QualitySection() {
         <div className="relative h-[50vh] md:h-[70vh] rounded-3xl overflow-hidden shadow-2xl shadow-brand-blue/30">
           <img
             ref={imageRef}
-            src="/quality.png"
+            src="/Pavanputra-Cinematic/quality.png"
             alt="Quality Assurance"
             className="w-full h-[120%] -top-[10%] absolute object-cover"
           />

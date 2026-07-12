@@ -40,7 +40,7 @@ export default function ProductsSection() {
         <div className="relative h-[50vh] md:h-[70vh] rounded-3xl overflow-hidden shadow-2xl shadow-white/5">
           <img
             ref={imageRef}
-            src="/products.png"
+            src="/Pavanputra-Cinematic/products.png"
             alt="Premium Medical Products"
             className="w-full h-[120%] -top-[10%] absolute object-cover origin-bottom scale-105"
           />

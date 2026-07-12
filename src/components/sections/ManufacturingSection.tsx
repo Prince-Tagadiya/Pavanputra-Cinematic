@@ -60,7 +60,7 @@ export default function ManufacturingSection() {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          src="/video2.mp4"
+          src="/Pavanputra-Cinematic/video2.mp4"
           muted
           playsInline
           preload="auto"

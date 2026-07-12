@@ -11,14 +11,14 @@ const FOUNDERS = [
   { name: "Maulik Thummar", highlighted: false },
   { name: "Dhaval Gami", highlighted: false },
   { name: "Paras Ghadiya", highlighted: false },
-  { name: "DARSHAN VADODRIYA", highlighted: true }
+  { name: "DARSHAN VADODRIYA", highlighted: false }
 ];
 
 export default function LeadershipSection() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo(".founder-card", 
+    gsap.fromTo(".founder-card",
       { y: 50, opacity: 0 },
       {
         y: 0,
@@ -44,19 +44,19 @@ export default function LeadershipSection() {
 
         <ul className="max-w-6xl mx-auto flex flex-wrap justify-center gap-6 text-center">
           {FOUNDERS.map((founder, i) => (
-            <li 
-              key={i} 
+            <li
+              key={i}
               className={cn(
                 "founder-card flex flex-col justify-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 hover:bg-brand-medical/10 hover:border-brand-medical/40 hover:scale-[1.02]",
-                founder.highlighted 
-                  ? "w-full md:w-[80%] py-12 px-8 shadow-2xl shadow-brand-medical/5" 
+                founder.highlighted
+                  ? "w-full md:w-[80%] py-12 px-8 shadow-2xl shadow-brand-medical/5"
                   : "w-full md:w-[30%] py-8 px-6"
               )}
             >
               <h3 className={cn(
                 "font-heading font-bold",
-                founder.highlighted 
-                  ? "text-3xl md:text-5xl lg:text-6xl uppercase tracking-widest text-white drop-shadow-lg" 
+                founder.highlighted
+                  ? "text-3xl md:text-5xl lg:text-6xl uppercase tracking-widest text-white drop-shadow-lg"
                   : "text-xl md:text-2xl text-white/80 font-medium"
               )}>
                 {founder.name}

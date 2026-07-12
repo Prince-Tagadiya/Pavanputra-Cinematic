@@ -28,7 +28,7 @@ export default function VisionSection() {
       <div 
         ref={bgRef}
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat h-[130%] -top-[15%]"
-        style={{ backgroundImage: "url('/vision.png')" }}
+        style={{ backgroundImage: "url('/Pavanputra-Cinematic/vision.png')" }}
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-transparent to-black" />
       <div className="absolute inset-0 z-10 bg-black/40" />

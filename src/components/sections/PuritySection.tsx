@@ -33,7 +33,7 @@ export default function PuritySection() {
       <div 
         ref={bgRef}
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/purity.png')" }}
+        style={{ backgroundImage: "url('/Pavanputra-Cinematic/purity.png')" }}
       />
       <div className="absolute inset-0 z-10 bg-black/40" />
 

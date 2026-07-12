@@ -41,7 +41,7 @@ export default function WarehouseSection() {
       <div className="absolute inset-0 z-0">
         <img
           ref={imageRef}
-          src="/warehouse.png"
+          src="/Pavanputra-Cinematic/warehouse.png"
           alt="Massive Warehouse"
           className="w-[130%] h-full max-w-none object-cover opacity-60"
         />
